@@ -5,8 +5,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String folderPath = "D:\\Марина";
-        long sizeLimit = SizeCalculator.getSizeFromHumanReadable("50Mb");
+        ParametersBag bag = new ParametersBag(args);
+
+        String folderPath = bag.getPath();
+        long sizeLimit = bag.getLimit();
         File file = new File(folderPath);
         Node root = new Node(file, sizeLimit);
 
